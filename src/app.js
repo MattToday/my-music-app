@@ -1,5 +1,8 @@
 
+import { Provider } from 'react-redux'
+import 'taro-ui/dist/style/index.scss'
 import { useLaunch } from '@tarojs/taro'
+import store from './store'
 import './app.scss'
 
 function App({ children }) {
@@ -9,7 +12,11 @@ function App({ children }) {
   })
 
   // children 是将要会渲染的页面
-  return children
+  return (
+    <Provider store={store}>
+      { children }
+    </Provider>
+  )
 }
 
 export default App

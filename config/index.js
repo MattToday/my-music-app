@@ -1,3 +1,5 @@
+const path = require('path')
+
 const config = {
   projectName: 'my-music-app',
   date: '2023-6-13',
@@ -44,6 +46,15 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]'
         }
       }
+    },
+    webpackChain(chain) { // 添加到config-mini
+      chain.module
+        .rule('script')
+        .use('linariaLoader')
+        .loader('linaria/loader')
+        .options({
+          sourceMap: process.env.NODE_ENV !== 'production',
+        })
     }
   },
   h5: {
@@ -71,7 +82,11 @@ const config = {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
       }
     }
-  }
+  },
+  alias: {
+    '@': path.resolve(__dirname, '..', 'src'),
+    '@components': path.resolve(__dirname, '..', 'src/components'),
+  },
 }
 
 module.exports = function (merge) {
