@@ -2,7 +2,7 @@
   "miniprogramRoot": "./dist",
   "projectname": "my-music-app",
   "description": "网易云音乐",
-  "appid": "touristappid",
+  "appid": "wxb2d9ee8c6cf658d4",
   "setting": {
     "urlCheck": true,
     "es6": false,

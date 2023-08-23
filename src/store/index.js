@@ -1,6 +1,7 @@
 import { init } from '@rematch/core'
 
-const middlewares = [require('redux-logger').createLogger()]
+const middlewares = []
+middlewares.push(require('redux-logger').createLogger())
 
 const models = {}
 

@@ -6,11 +6,14 @@ export const TabBarWrapper = styled.View`
   width: 100%;
   left: 0;
   bottom: 0;
-  height: 104px;
-  display: flex;
-  box-sizing: initial;
   padding-bottom: constant(safe-area-inset-bottom);
   padding-bottom: env(safe-area-inset-bottom);
+  background-color: #fff;
+  .tab-bar-inner {
+    height: 104px;
+    display: flex;
+    box-sizing: initial;
+  }
   .tabbar__item {
     height: 100%;
     display: flex;

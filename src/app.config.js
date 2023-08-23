@@ -1,6 +1,8 @@
 export default defineAppConfig({
   pages: [
     'pages/index/index',
+    'pages/login/index',
+    'pages/dailyRecom/index',
     'pages/blog/index',
     'pages/music/index',
     'pages/follow/index',
@@ -9,7 +11,7 @@ export default defineAppConfig({
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: 'WeChat',
+    navigationBarTitleText: '音乐',
     navigationBarTextStyle: 'black'
   },
   tabBar: {
@@ -21,5 +23,6 @@ export default defineAppConfig({
       {pagePath: 'pages/community/index', text: '社区', iconPath: 'assets/img/community.png', selectedIconPath: 'assets/img/community_active.png'},
     ],
     custom: true
-  }
+  },
+  requiredBackgroundModes: ['audio']
 })

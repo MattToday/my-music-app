@@ -7,5 +7,16 @@ module.exports = {
       ts: false
     }],
     'linaria/babel'
+  ],
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "@antmjs/vantui",
+        "libraryDirectory": "es",
+        "style": (name) => `${name}/style/less`,
+      },
+      "@antmjs/vantui"
+    ]
   ]
 }

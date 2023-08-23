@@ -2,8 +2,9 @@ import Taro from '@tarojs/taro';
 import PropTypes from 'prop-types'
 import { View, Image, Text } from '@tarojs/components';
 import classname from 'classname';
-import { useState, memo } from 'react';
+import {  memo } from 'react';
 import { TabBarWrapper } from './style';
+import AudioPlay from '../AudioPlay';
 
 const TabBar = memo((props) => {
   const tableList = [
@@ -25,16 +26,19 @@ const TabBar = memo((props) => {
 
   return (
     <TabBarWrapper>
-      {
-        tableList.map(tab => (
-          <View className={classname('tabbar__item', {active: tab.pagePath === props.path})} key={tab.title} onClick={() => handleClick(tab.pagePath)}>
-            <View className='tabbar__item_icon-wrapper'>
-              <Image className='tabbar__item__icon default' src={tab.pagePath === props.path ? tab.selectedImage : tab.image} />
+      <AudioPlay></AudioPlay>
+      <View className='tab-bar-inner'>
+        {
+          tableList.map(tab => (
+            <View className={classname('tabbar__item', {active: tab.pagePath === props.path})} key={tab.title} onClick={() => handleClick(tab.pagePath)}>
+              <View className='tabbar__item_icon-wrapper'>
+                <Image className='tabbar__item__icon default' src={tab.pagePath === props.path ? tab.selectedImage : tab.image} />
+              </View>
+              <Text className='tabbar__item__text'>{ tab.title }</Text>
             </View>
-            <Text className='tabbar__item__text'>{ tab.title }</Text>
-          </View>
-        ))
-      }
+          ))
+        }
+      </View>
     </TabBarWrapper>
   );
 });

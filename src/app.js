@@ -1,15 +1,12 @@
 
 import { Provider } from 'react-redux'
 import 'taro-ui/dist/style/index.scss'
-import { useLaunch } from '@tarojs/taro'
-import store from './store'
+import 'taro-skeleton/dist/index.css'
+import '@assets/font/iconfont.scss'
 import './app.scss'
+import store from './store'
 
 function App({ children }) {
-
-  useLaunch(() => {
-    console.log('App launched.')
-  })
 
   // children 是将要会渲染的页面
   return (

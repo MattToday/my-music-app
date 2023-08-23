@@ -55,16 +55,25 @@ const config = {
         .options({
           sourceMap: process.env.NODE_ENV !== 'production',
         })
+    },
+    miniCssExtractPluginOption: {
+      ignoreOrder: true
     }
   },
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
+    esnextModules: [/@antmjs[\/]vantui/, 'taro-skeleton'],
+
     postcss: {
       autoprefixer: {
         enable: true,
         config: {
         }
+      },
+      pxtransform: {
+        enable: true,
+        config: {},
       },
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
@@ -86,6 +95,9 @@ const config = {
   alias: {
     '@': path.resolve(__dirname, '..', 'src'),
     '@components': path.resolve(__dirname, '..', 'src/components'),
+    "@utils":  path.resolve(__dirname, '..', 'src/utils'),
+    "@api":  path.resolve(__dirname, '..', 'src/servies/api'),
+    "@assets":  path.resolve(__dirname, '..', 'src/assets'),
   },
 }
 

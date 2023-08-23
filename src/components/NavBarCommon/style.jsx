@@ -5,6 +5,8 @@ export const NavBarWrapper = styled.View`
   left: 0;
   top: 0;
   z-index: 500;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
   .container {
     background-repeat: no-repeat;
     background-position: 50%;
